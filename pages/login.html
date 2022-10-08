@@ -52,22 +52,22 @@
                                     <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
                                 </div>
 
-                                <form>
+                                <form action="/api/login" method="post">
                                     <p>Please login to your account</p>
 
                                     <div class="form-outline mb-4">
                                         <input type="email" id="form2Example11" class="form-control"
-                                               placeholder="Phone number or email address" />
-                                        <label class="form-label" for="form2Example11">Username</label>
+                                               placeholder="Phone number or email address"  name="email" />
+                                        <label class="form-label" for="form2Example11">Email</label>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="form2Example22" class="form-control" />
+                                        <input type="password" id="form2Example22" class="form-control" name="password" />
                                         <label class="form-label" for="form2Example22">Password</label>
                                     </div>
 
                                     <div class="text-center pt-1 mb-5 pb-1">
-                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Log
+                                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Log
                                             in</button>
 
                                     </div>
@@ -97,6 +97,5 @@
 </section>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-<script src="/js/login.js"></script>
 </body>
 </html>

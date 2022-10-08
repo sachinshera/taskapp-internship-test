@@ -77,7 +77,7 @@ app.use(express.static(path.join(__dirname, 'assets')));
 app.get("/",(req,res,next)=>{
     // check user authenticated or not
     if(req.user){
-        res.redirect('/');
+        res.sendFile(path.join(__dirname,'/pages/index.html'));
     }else{
         res.redirect("/login");
     }
@@ -95,7 +95,9 @@ app.get('/register', (req, res) => {
 //login api route and authentication with passport and passport-local
 
 app.post('/api/login',passport.authenticate('local', {
-    successRedirect: '/',
+    successMessage:"Login Success",
+    failureFlash: true,
+    successRedirect: '/'
 }))
 
 // register api route
