@@ -1,0 +1,156 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+      "title": "TaskApp  (Test Project for Internship)",
+      "description": "TaskApp  (Test Project for Internship)",
+      "version": "0.0.1"
+    },
+    "paths": {
+      "/api/login": {
+        "post": {
+          "description": "List all posts",
+          "operationId": "login",
+            "parameters": [
+                {
+                "name": "email",
+                "in":"formData",
+                "type":"array",
+                "description": "email address",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+                },
+                {
+                "name": "password",
+                "in":"formData",
+                "type":"array",
+                "description": "password",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+                }
+            ],
+          "responses": {
+            "200": {
+              "description": "Login successful",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "userId": {
+                          "type": "number"
+                        },
+                        "id": {
+                          "type": "number"
+                        },
+                        "title": {
+                          "type": "string"
+                        },
+                        "body": {
+                          "type": "string"
+                        }
+                      },
+                      "example": {
+                        "userId": 1,
+                        "id": 1,
+                        "title": "",
+                        "body": ""
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/register":{
+        "post":{
+            "description":"Resister new user",
+            "operationId":"register",
+            "parameters":[
+                {
+                    "name":"firstName",
+                    "in":"formData",
+                    "type":"array",
+                    "description":"First Name",
+                    "required":true,
+                    "schema":{
+                        "type":"string"
+                    }
+                },
+                {
+                    "name":"lastName",
+                    "in":"formData",
+                    "type":"array",
+                    "description":"last Name",
+                    "required":true,
+                    "schema":{
+                        "type":"string"
+                    }
+                },
+                {
+                    "name":"email",
+                    "in":"formData",
+                    "type":"array",
+                    "description":"email",
+                    "required":true,
+                    "schema":{
+                        "type":"string"
+                    }
+                },
+                {
+                    "name":"password",
+                    "in":"formData",
+                    "type":"array",
+                    "description":"password",
+                    "required":true,
+                    "schema":{
+                        "type":"string"
+                    }
+                } 
+            ],
+            "responses":{
+                "200":{
+                    "description":"New User created",
+                    "content":{
+                        "application/json":{
+                            "schema":{
+                                "type":"array",
+                                "items":{
+                                    "type":"object",
+                                    "properties":{
+                                        "userId":{
+                                            "type":"number"
+                                        },
+                                        "id":{
+                                            "type":"number"
+                                        },
+                                        "title":{
+                                            "type":"string"
+                                        },
+                                        "body":{
+                                            "type":"string"
+                                        }
+                                    },
+                                    "example":{
+                                        "userId":1,
+                                        "id":1,
+                                        "title":"",
+                                        "body":""
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+      }
+    }
+  }

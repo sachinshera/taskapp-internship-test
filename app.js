@@ -11,6 +11,15 @@ const expressSession = require('express-session');
 const passport = require('passport');
 const passportLocal = require('passport-local');
 
+const swaggerUi = require("swagger-ui-express"),
+swaggerDocument = require("./swagger.json");
+
+app.use(
+    '/api-docs',
+    swaggerUi.serve, 
+    swaggerUi.setup(swaggerDocument)
+  );
+
 // init database connection
 const db = require('./db');
 
